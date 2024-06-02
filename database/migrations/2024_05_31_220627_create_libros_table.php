@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('titulo');
             $table->integer('anio_publicacion');
-            $table->text('descripcion')->nullable;
+            $table->text('descripcion');
             $table->timestamps();
         });
     }

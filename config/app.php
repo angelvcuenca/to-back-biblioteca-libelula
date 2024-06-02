@@ -180,10 +180,11 @@ return [
         Illuminate\Session\SessionServiceProvider::class,
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
-        Illuminate\View\ViewServiceProvider::class,  
+        Illuminate\View\ViewServiceProvider::class,
         //Jenssegers\Mongodb\MongodbServiceProvider::class,
         Mongodb\Laravel\MongodbServiceProvider::class,
 
+        Tymon\JWTAuth\Providers\LaravelServiceProvider::class,
         /*
          * Package Service Providers...
          */

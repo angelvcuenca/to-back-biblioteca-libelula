@@ -92,7 +92,7 @@ return [
             // 'encrypt' => env('DB_ENCRYPT', 'yes'),
             // 'trust_server_certificate' => env('DB_TRUST_SERVER_CERTIFICATE', 'false'),
         ],
-        
+
 
         'mongodb' => [
             'driver' => 'mongodb',
@@ -100,6 +100,17 @@ return [
             'database' => env('DB_DATABASE', 'laravel-mongodb-biblioteca'),
         ],
 
+       /* 'mongodb' => [
+            'driver'   => 'mongodb',
+            'host'     => env('DB_HOST', 'localhost'),
+            'port'     => env('DB_PORT', 27017),
+            'database' => env('DB_DATABASE', 'your-database'),
+            'username' => env('DB_USERNAME', 'your-username'),
+            'password' => env('DB_PASSWORD', 'your-password'),
+            'options'  => [
+                // opciones adicionales de configuración
+            ],
+        ],*/
     ],
 
     /*
