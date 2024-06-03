@@ -53,7 +53,7 @@ Una vez que la aplicación esté desplegada y configurada correctamente, puedes 
 
 Asegúrate de consultar la documentación de la API para obtener más detalles sobre los endpoints disponibles y sus parámetros. En el siguiente enlace:
 
-<a href="https://github.com/laravel/framework/actions">dasdas</a>
+<a href="https://documenter.getpostman.com/view/3256348/2sA3QwcqAr">https://documenter.getpostman.com/view/3256348/2sA3QwcqAr</a>
 
 ## Ejecución
 
