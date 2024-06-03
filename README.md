@@ -88,5 +88,5 @@ php artisan serve
 
 ## Autor
 
--Este proyecto fue creado por Nombre del Angel Cuenca (angelvcuenca@gmail.com).
+-Este proyecto fue creado por Angel Cuenca (angelvcuenca@gmail.com).
 
