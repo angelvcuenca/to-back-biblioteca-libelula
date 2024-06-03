@@ -7,60 +7,86 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-## About Laravel
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+# Despliegue de Laravel con MongoDB
+Este repositorio contiene los archivos necesarios para desplegar una aplicación que administre una biblioteca virtual de libros y
+autores en Laravel que utiliza MongoDB como base de datos.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+A continuación, se detalla cómo configurar y ejecutar la aplicación en un entorno de local/producción.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Requisitos previos
+- PHP >= 8.1 
+- Composer 
+- MongoDB >= 4.0 
+- Servidor web (por ejemplo, Nginx o Apache)
+- XAMPP , WAMP, LARAGON
 
-## Learning Laravel
+## Instalación
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+1. Clona este repositorio en tu local:
+```bash
+git clone https://github.com/angelvcuenca/to-back-biblioteca-libelula.git
+```
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+## Uso
+Una vez que la aplicación esté desplegada y configurada correctamente, puedes comenzar a utilizar la API. Aquí tienes algunos puntos de entrada:
+### Endpoints Login
+- POST /api/auth/login: Inicia la sesion y obtiene un token. 
+- POST /api/auth/register: Registra un nuevo usuario. 
+- POST /api/auth/logout: Cierra la sesion. 
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### Endpoints Autor
+- GET /api/v1/all-authors: Obtiene todos los autores.
+- GET /api/v1/get-id-author/{id}: Obtiene un autor por su ID.
+- POST /api/v1/save-author: Crea un nuevo autor.
+- PUT /api/v1/update-author/{id}: Actualiza un autor existente.
+- PACHT /api/v1/update-partial-author/{id}: Actualiza un autor segun un campo especifico.
+- DELETE /api/v1/delete-author/{id}: Elimina un autor por su ID.
 
-## Laravel Sponsors
+### Endpoints Libro
+- GET /api/v1/all-books: Obtiene todos los libros.
+- GET /api/v1/get-id-book/{id}: Obtiene un libro por su ID.
+- POST /api/v1/save-book: Crea un nuevo libro.
+- PUT /api/v1/update-book/{id}: Actualiza un libro existente.
+- PACHT /api/v1/update-partial-book/{id}: Actualiza un libro segun un campo especifico.
+- DELETE /api/v1/delete-book/{id}: Elimina un libro por su ID.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+Asegúrate de consultar la documentación de la API para obtener más detalles sobre los endpoints disponibles y sus parámetros. En el siguiente enlace:
 
-### Premium Partners
+<a href="https://github.com/laravel/framework/actions">dasdas</a>
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+## Ejecución
 
-## Contributing
+1. Instala las dependencias con Composer:
+```bash
+composer install --no-dev
+```
+2. Copia el archivo de configuración .env.example y renómbralo como .env:
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+3. Edita el archivo .env y configura las variables de entorno necesarias, como la conexión a la base de datos MongoDB:
+```dotenv
+DB_CONNECTION=mongodb
+DB_URI="mongodb://localhost:27017"
+DB_DATABASE=nombre_base_datos
+DB_USERNAME=su_usuario
+DB_PASSWORD=su_password
 
-## Code of Conduct
+```
+4. Genera la clave de la aplicación:
+```bash
+php artisan key:generate
+```
+5. Ejecuta las migraciones para crear las tablas en la base de datos:
+```bash
+php artisan migrate
+```
+6. Inicia el servidor local
+```bash
+php artisan serve
+```
+9. Accede a la API aplicación en tu navegador web en http://localhost:8000.
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+## Autor
 
-## Security Vulnerabilities
+-Este proyecto fue creado por Nombre del Angel Cuenca (angelvcuenca@gmail.com).
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
